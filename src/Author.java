@@ -5,25 +5,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Author extends Person {
-    private List books;
+    private ArrayList books;
 
     public Author(String firstName, String lastName) {
         super(firstName, lastName);
-        books = new ArrayList();
+        this.books = new ArrayList<>();
     }
 
     /**
      * @deprecated Use publishedBooks instead
      */
+
     @Deprecated
-    public List<String> getBooks() {
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> getBooks() {
         return books;
     }
 
-    public List<String> publishedBooks() {
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> publishedBooks() {
         return books;
     }
 
+    @SuppressWarnings("unchecked")
     public void addBook(String book) {
         books.add(book);
     }
